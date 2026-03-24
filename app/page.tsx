@@ -1,5 +1,5 @@
 import TerminalIntro from "@/components/TerminalIntro";
-import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import EducationCerts from "@/components/EducationCerts";
@@ -11,9 +11,9 @@ import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
-    <main className="relative bg-[#020617] overflow-x-hidden">
+    <main className="relative min-h-screen transition-colors duration-500 overflow-x-hidden">
       <TerminalIntro />
-      <Header />
+      <Navbar />
       <Hero />
       <About />
       <EducationCerts />

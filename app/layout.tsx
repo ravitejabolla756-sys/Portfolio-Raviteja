@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={
           poppins.variable +
-          " font-[var(--font-poppins)] bg-[#020617] text-white min-h-screen"
+          " font-[var(--font-poppins)] min-h-screen transition-colors duration-300"
         }
       >
         {children}

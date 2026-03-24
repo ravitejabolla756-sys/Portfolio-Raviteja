@@ -53,18 +53,18 @@ export default function TerminalIntro() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[9999] bg-black text-[#00bfff] font-mono overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-black text-accent font-mono overflow-hidden"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#0a1628_0,_#000_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1a0b02_0,_#000_60%)]" />
           <div className="relative h-full w-full px-6 md:px-16 py-10 md:py-16 flex flex-col justify-start overflow-hidden">
             {/* Terminal header bar */}
             <div className="flex items-center gap-2 mb-8">
               <div className="w-3 h-3 rounded-full bg-red-500 opacity-80" />
               <div className="w-3 h-3 rounded-full bg-yellow-500 opacity-80" />
               <div className="w-3 h-3 rounded-full bg-green-500 opacity-80" />
-              <span className="ml-3 text-[#00bfff]/40 text-xs">terminal — portfolio_system v2.0</span>
+              <span className="ml-3 text-accent/40 text-xs">terminal — portfolio_system v2.0</span>
             </div>
 
             <div className="max-w-3xl text-xs md:text-sm space-y-1">
@@ -76,17 +76,17 @@ export default function TerminalIntro() {
                   transition={{ duration: 0.1 }}
                   className={`leading-relaxed ${
                     line?.startsWith("guest@") ? "text-white font-bold mt-3 text-sm md:text-base" :
-                    line?.includes("[OK]") || line?.includes("[Mounted]") || line?.includes("[Ready]") || line?.includes("[Established]") ? "text-[#00bfff]" :
+                    line?.includes("[OK]") || line?.includes("[Mounted]") || line?.includes("[Ready]") || line?.includes("[Established]") ? "text-accent" :
                     line?.includes("[VERIFIED]") || line?.includes("[SECURE]") ? "text-emerald-400" :
                     line === "" ? "h-2" :
-                    "text-[#00bfff]/70"
+                    "text-accent/70"
                   }`}
                 >
                   {line}
                 </motion.p>
               ))}
               <motion.span
-                className="inline-block mt-2 w-2.5 h-4 bg-[#00bfff]"
+                className="inline-block mt-2 w-2.5 h-4 bg-accent"
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ repeat: Infinity, duration: 0.7 }}
               />

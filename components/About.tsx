@@ -36,8 +36,8 @@ export default function About() {
         transition={{ duration: 0.7 }}
       >
         {/* Glow behind avatar */}
-        <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_center,_#00bfff_0,_transparent_70%)] opacity-25 blur-2xl scale-110 animate-pulse" />
-        <div className="absolute inset-0 rounded-3xl border border-[#00bfff]/30 bg-black/70 shadow-[0_0_40px_rgba(0,191,255,0.15)] overflow-hidden z-10">
+        <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_center,_var(--accent-glow)_0,_transparent_70%)] opacity-25 blur-2xl scale-110 animate-pulse" />
+        <div className="absolute inset-0 rounded-3xl border border-accent/30 bg-white/70 dark:bg-black/70 shadow-[0_0_40px_rgba(249,115,22,0.15)] overflow-hidden z-10">
           {/* Placeholder avatar using DiceBear */}
           <img
             src="https://api.dicebear.com/9.x/notionists/svg?seed=BollaRaviTeja&backgroundColor=transparent"
@@ -46,10 +46,10 @@ export default function About() {
           />
         </div>
         {/* Cyber corner accents */}
-        <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#00bfff] rounded-tl-xl z-20" />
-        <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-[#00bfff] rounded-tr-xl z-20" />
-        <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-[#00bfff] rounded-bl-xl z-20" />
-        <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#00bfff] rounded-br-xl z-20" />
+        <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-accent rounded-tl-xl z-20" />
+        <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-accent rounded-tr-xl z-20" />
+        <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-accent rounded-bl-xl z-20" />
+        <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-accent rounded-br-xl z-20" />
       </motion.div>
 
       <motion.div
@@ -59,22 +59,22 @@ export default function About() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.7, delay: 0.15 }}
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
-          About <span className="text-[#00bfff] drop-shadow-[0_0_15px_rgba(0,191,255,0.6)]">Me</span>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-[var(--text)]">
+          About <span className="text-accent glow-accent">Me</span>
         </h2>
-        <div className="space-y-4 text-sm md:text-base text-neutral-300 leading-relaxed">
+        <div className="space-y-6 text-sm md:text-base text-slate-600 dark:text-neutral-300 leading-relaxed">
           <p>
-            I&apos;m a BTech CSE student specializing in IoT, Cyber Security, and Cloud Computing.
+            I am a <span className="text-accent font-semibold tracking-wide">B.Tech CSE student</span> focused on building real-world digital products with direct utility. My work centers on automation systems, AI-integrated applications, and scalable tools that reduce manual effort and solve practical problems.
           </p>
           <p>
-            I focus on building real-world applications and automation-driven systems. My work centers around creating scalable tools that solve practical problems using AI and workflows.
+            I operate with a product-first approach, prioritizing execution over theory. Current development includes <span className="text-accent font-semibold">Bavio.in</span>, an automation-first platform built around virtual numbers and workflow systems, along with multiple utility-driven mobile applications.
           </p>
-          <p>
-            Currently building <span className="text-[#00bfff] font-semibold">Bavio.in</span> alongside scalable automation systems.
+          <p className="text-slate-500 dark:text-neutral-400 font-mono text-sm border-l-2 border-accent/40 pl-4 py-1 italic">
+            Core direction: system design, automation architecture, and rapid deployment of functional products.
           </p>
-          <p className="flex items-center gap-3 mt-6 text-white font-semibold">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#00bfff] shadow-[0_0_10px_#00bfff] animate-pulse" />
-            Execution-focused. Product-driven mindset.
+          <p className="flex items-center gap-3 mt-8 text-slate-800 dark:text-white font-semibold">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_12px_var(--accent-glow)] animate-pulse" />
+            Execution-driven. Systems-focused. Output-oriented.
           </p>
         </div>
         <div className="mt-10 flex gap-4">
@@ -89,8 +89,8 @@ export default function About() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={s.label}
-              whileHover={{ y: -4, boxShadow: "0 0 20px rgba(0,191,255,0.5)", borderColor: "#00bfff" }}
-              className="w-12 h-12 rounded-full bg-black/60 border border-white/10 flex items-center justify-center text-neutral-400 hover:text-[#00bfff] transition-colors"
+              whileHover={{ y: -4, boxShadow: "0 0 20px rgba(249, 115, 22, 0.5)", borderColor: "var(--accent)" }}
+              className="w-12 h-12 rounded-full bg-slate-100 dark:bg-black/60 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-500 dark:text-neutral-400 hover:text-accent transition-colors"
             >
               {s.icon}
             </motion.a>

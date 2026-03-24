@@ -29,8 +29,8 @@ const projects = [
 ];
 
 const statusClass: Record<string, string> = {
-  amber: "bg-amber-500/10 text-amber-400 border-amber-500/30",
-  green: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
+  amber: "bg-amber-500/10 text-amber-500 border-amber-500/30",
+  green: "bg-emerald-500/10 text-emerald-500 border-emerald-500/30",
 };
 
 function ProjectCard({ p, i }: { p: (typeof projects)[0]; i: number }) {
@@ -73,7 +73,7 @@ function ProjectCard({ p, i }: { p: (typeof projects)[0]; i: number }) {
         rotateY,
         transformStyle: "preserve-3d",
       }}
-      className="relative min-w-[300px] md:min-w-[420px] h-[340px] snap-center rounded-3xl border border-[#00bfff]/20 bg-gradient-to-br from-[#020617] to-[#0a1628] p-8 flex flex-col justify-between group transition-all duration-300 hover:border-[#00bfff] hover:shadow-[0_0_50px_rgba(0,191,255,0.4)]"
+      className="relative min-w-[300px] md:min-w-[420px] h-[340px] snap-center rounded-3xl border border-accent/20 bg-gradient-to-br from-white to-slate-50 dark:from-[#020617] dark:to-[#0a1628] p-8 flex flex-col justify-between group transition-all duration-300 hover:border-accent hover:shadow-[0_0_50px_var(--accent-glow)]"
     >
       <div style={{ transform: "translateZ(50px)" }}>
         <div className="flex justify-between items-start mb-6">
@@ -82,22 +82,22 @@ function ProjectCard({ p, i }: { p: (typeof projects)[0]; i: number }) {
           </span>
           <button
             onClick={() => window.open(p.url, "_blank")}
-            className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-[#00bfff] hover:bg-[#00bfff]/10 hover:border-[#00bfff] hover:shadow-[0_0_20px_rgba(0,191,255,0.6)] transition-all duration-300"
+            className="p-2.5 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-accent hover:bg-accent/10 hover:border-accent hover:shadow-[0_0_20px_var(--accent-glow)] transition-all duration-300"
             aria-label={`Open ${p.name}`}
           >
             <ArrowUpRight />
           </button>
         </div>
 
-        <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-[#00bfff] transition-colors tracking-tight">
+        <h3 className="text-3xl font-bold text-[var(--text)] mb-4 group-hover:text-accent transition-colors tracking-tight">
           {p.name}
         </h3>
-        <p className="text-base text-neutral-400 leading-relaxed font-medium">{p.desc}</p>
+        <p className="text-base text-slate-500 dark:text-neutral-400 leading-relaxed font-medium">{p.desc}</p>
       </div>
 
-      <div style={{ transform: "translateZ(30px)" }} className="pt-6 border-t border-white/5">
-        <span className="text-[10px] text-neutral-500 uppercase tracking-[0.2em] font-bold block mb-1.5 opacity-60">Engineered With</span>
-        <span className="text-base font-bold text-[#00bfff] group-hover:drop-shadow-[0_0_8px_rgba(0,191,255,0.5)] transition-all">{p.tech}</span>
+      <div style={{ transform: "translateZ(30px)" }} className="pt-6 border-t border-slate-200 dark:border-white/5">
+        <span className="text-[10px] text-slate-400 dark:text-neutral-500 uppercase tracking-[0.2em] font-bold block mb-1.5 opacity-60">Engineered With</span>
+        <span className="text-base font-bold text-accent group-hover:drop-shadow-[0_0_8px_var(--accent-glow)] transition-all">{p.tech}</span>
       </div>
     </motion.article>
   );
@@ -112,11 +112,11 @@ export default function Projects() {
         viewport={{ once: true }}
         className="mb-14"
       >
-        <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-          <span className="text-[#00bfff] drop-shadow-[0_0_15px_rgba(0,191,255,0.4)]">My</span> Projects
+        <h2 className="text-4xl md:text-6xl font-black tracking-tight text-[var(--text)]">
+          <span className="text-accent glow-accent">My</span> Projects
         </h2>
-        <p className="text-neutral-500 text-sm mt-4 font-mono flex items-center gap-2">
-          <span className="w-8 h-[1px] bg-neutral-800" />
+        <p className="text-slate-500 dark:text-neutral-500 text-sm mt-4 font-mono flex items-center gap-2">
+          <span className="w-8 h-[1px] bg-slate-200 dark:bg-neutral-800" />
           SYSTEM_LOG: ACTIVE_CORE_BUILDS [02]
         </p>
       </motion.div>

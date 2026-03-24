@@ -25,14 +25,14 @@ function MatrixCanvas() {
     const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモ";
 
     const draw = () => {
-      ctx.fillStyle = "rgba(2,6,23,0.07)";
+      ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = "13px monospace";
 
       drops.forEach((y, i) => {
         const char = chars[Math.floor(Math.random() * chars.length)];
         const bright = Math.random() > 0.93;
-        ctx.fillStyle = bright ? "#ffffff" : `rgba(0,191,255,${0.3 + Math.random() * 0.4})`;
+        ctx.fillStyle = bright ? "#ffffff" : `rgba(249, 115, 22, ${0.2 + Math.random() * 0.3})`;
         ctx.fillText(char, i * 18, y * 18);
         if (y * 18 > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
@@ -65,18 +65,18 @@ export default function Hero() {
       <MatrixCanvas />
 
       {/* Radial gradient base */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_#0f172a_0,_#020617_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--accent-glow)_0,_var(--bg)_70%)] transition-colors duration-500" />
 
       {/* Animated glow orbs */}
       <motion.div
         animate={{ y: [0, -30, 0], scale: [1, 1.15, 1] }}
         transition={{ repeat: Infinity, duration: 9, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#00bfff] rounded-full mix-blend-screen blur-[170px] opacity-[0.07] pointer-events-none"
+        className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent rounded-full mix-blend-screen blur-[170px] opacity-[0.05] pointer-events-none"
       />
       <motion.div
         animate={{ y: [0, 30, 0], scale: [1.1, 1, 1.1] }}
         transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-1/4 w-[380px] h-[380px] bg-[#0ea5e9] rounded-full mix-blend-screen blur-[150px] opacity-[0.07] pointer-events-none"
+        className="absolute bottom-1/3 right-1/4 w-[380px] h-[380px] bg-accent rounded-full mix-blend-screen blur-[150px] opacity-[0.05] pointer-events-none"
       />
 
       {/* Content */}
@@ -91,7 +91,7 @@ export default function Hero() {
           initial={{ opacity: 0, letterSpacing: "0.1em" }}
           animate={{ opacity: 1, letterSpacing: "0.35em" }}
           transition={{ delay: 4.4, duration: 0.8 }}
-          className="text-xs md:text-sm uppercase text-[#00bfff] font-mono mb-6 glow-cyan"
+          className="text-xs md:text-sm uppercase text-accent font-mono mb-6 glow-accent"
         >
           System Builder · Automation Focus
         </motion.p>
@@ -102,7 +102,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 4.3, duration: 0.7 }}
-            className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[9.5rem] font-black text-[#00bfff] tracking-tighter drop-shadow-[0_0_50px_rgba(0,191,255,0.4)] whitespace-nowrap"
+            className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[9.5rem] font-black text-accent tracking-tighter drop-shadow-[0_0_50px_rgba(249,115,22,0.4)] whitespace-nowrap"
           >
             RAVI TEJA
           </motion.h1>
@@ -121,7 +121,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4.6, duration: 0.6 }}
-          className="text-sm md:text-base font-mono tracking-[0.22em] uppercase text-neutral-400 mb-3"
+          className="text-sm md:text-base font-mono tracking-[0.22em] uppercase text-slate-500 dark:text-neutral-400 mb-3"
         >
           BTech CSE · App Builder · Automation Engineer
         </motion.h2>
@@ -130,7 +130,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4.8, duration: 0.6 }}
-          className="text-sm md:text-base text-neutral-500 max-w-lg mx-auto leading-relaxed mb-10"
+          className="text-sm md:text-base text-slate-500 dark:text-neutral-500 max-w-lg mx-auto leading-relaxed mb-10"
         >
           Building automation-first products and scalable digital systems for real-world impact.
         </motion.p>
@@ -144,9 +144,9 @@ export default function Hero() {
         >
           <motion.a
             href="#projects"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0,191,255,0.7)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(249, 115, 22, 0.7)" }}
             whileTap={{ scale: 0.96 }}
-            className="px-8 py-3.5 border border-[#00bfff] bg-[#00bfff]/10 text-white text-sm font-bold tracking-widest uppercase rounded-lg hover:bg-[#00bfff]/20 transition-colors"
+            className="px-8 py-3.5 border border-accent bg-accent/10 text-accent dark:text-white text-sm font-bold tracking-widest uppercase rounded-lg hover:bg-accent/20 transition-colors"
           >
             View Projects
           </motion.a>

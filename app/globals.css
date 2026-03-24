@@ -1,34 +1,49 @@
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@theme {
+  --color-accent: #f97316;
+  --color-accent-glow: rgba(249, 115, 22, 0.4);
+  --color-bg: white;
+  --color-text: #121212;
 }
 
-body {
-  background-color: #020617;
-  color: white;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  :root {
+    --accent: #f97316;
+    --accent-glow: rgba(249, 115, 22, 0.4);
+    --bg: #ffffff;
+    --text: #121212;
+  }
+
+  .dark {
+    --bg: #000000;
+    --text: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }
 
-/* Outline text stroke for hero "TEJA" */
+/* Outline text stroke for hero "BOLLA" */
 .text-stroke {
-  -webkit-text-stroke: 2.5px rgba(255, 255, 255, 0.9);
+  -webkit-text-stroke: 2px var(--text);
+  opacity: 0.7;
   color: transparent;
 }
 
-.text-stroke-cyan {
-  -webkit-text-stroke: 2.5px #00bfff;
+.text-stroke-accent {
+  -webkit-text-stroke: 2px var(--accent);
   color: transparent;
-}
-
-/* Hide scrollbar for project slider */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 /* Scanline effect for terminal */
@@ -37,27 +52,29 @@ body {
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 191, 255, 0.015) 2px,
-    rgba(0, 191, 255, 0.015) 4px
+    var(--accent-glow) 2px,
+    var(--accent-glow) 4px
   );
+  opacity: 0.05;
   pointer-events: none;
 }
 
 /* Glow text utility */
-.glow-cyan {
-  text-shadow: 0 0 10px rgba(0, 191, 255, 0.8), 0 0 20px rgba(0, 191, 255, 0.4);
+.glow-accent {
+  text-shadow: 0 0 10px var(--accent), 0 0 20px rgba(249, 115, 22, 0.4);
 }
 
 /* Cyber grid bg for footer */
 .cyber-grid {
-  background-image: radial-gradient(circle, rgba(0, 191, 255, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
   background-size: 24px 24px;
+  opacity: 0.1;
 }
 
 /* Animated gradient border */
 @keyframes borderGlow {
-  0%, 100% { box-shadow: 0 0 15px rgba(0, 191, 255, 0.2), inset 0 0 15px rgba(0, 191, 255, 0.02); }
-  50% { box-shadow: 0 0 30px rgba(0, 191, 255, 0.4), inset 0 0 30px rgba(0, 191, 255, 0.05); }
+  0%, 100% { box-shadow: 0 0 15px var(--accent-glow), inset 0 0 15px rgba(249, 115, 22, 0.02); }
+  50% { box-shadow: 0 0 30px rgba(249, 115, 22, 0.4), inset 0 0 30px rgba(249, 115, 22, 0.05); }
 }
 .animate-border-glow {
   animation: borderGlow 3s ease-in-out infinite;
