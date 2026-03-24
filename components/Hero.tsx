@@ -102,17 +102,17 @@ export default function Hero() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 4.3, duration: 0.7 }}
-            className="text-[4.5rem] sm:text-[6.5rem] md:text-[8.5rem] lg:text-[10rem] font-black text-[#00bfff] tracking-tighter drop-shadow-[0_0_50px_rgba(0,191,255,0.4)]"
+            className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[9.5rem] font-black text-[#00bfff] tracking-tighter drop-shadow-[0_0_50px_rgba(0,191,255,0.4)] whitespace-nowrap"
           >
-            RAVI
+            RAVI TEJA
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 4.3, duration: 0.7 }}
-            className="text-[4.5rem] sm:text-[6.5rem] md:text-[8.5rem] lg:text-[10rem] font-black text-stroke tracking-tighter"
+            className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[9.5rem] font-black text-stroke tracking-tighter"
           >
-            TEJA
+            BOLLA
           </motion.h1>
         </div>
 

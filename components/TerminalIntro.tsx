@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const LINES = [
   "[0.000000] Booting Portfolio System v2.0...",
   "[0.021543] Initializing Core Modules... [OK]",
-  "[0.045312] Loading Profile: Ravi Teja... [OK]",
+  "[0.045312] Loading Profile: Bolla Ravi Teja... [OK]",
   "[0.067123] Verifying Identity... [VERIFIED]",
   "[0.089456] Checking System Integrity... [SECURE]",
   "",

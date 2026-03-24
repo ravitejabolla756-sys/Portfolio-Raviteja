@@ -40,8 +40,8 @@ export default function About() {
         <div className="absolute inset-0 rounded-3xl border border-[#00bfff]/30 bg-black/70 shadow-[0_0_40px_rgba(0,191,255,0.15)] overflow-hidden z-10">
           {/* Placeholder avatar using DiceBear */}
           <img
-            src="https://api.dicebear.com/9.x/notionists/svg?seed=RaviTeja&backgroundColor=transparent"
-            alt="Ravi Teja Avatar"
+            src="https://api.dicebear.com/9.x/notionists/svg?seed=BollaRaviTeja&backgroundColor=transparent"
+            alt="Bolla Ravi Teja Avatar"
             className="h-full w-full object-contain p-4"
           />
         </div>

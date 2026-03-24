@@ -9,9 +9,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ravi Teja · Automation Systems Developer",
+  title: "Bolla Ravi Teja · Automation Systems Developer",
   description:
-    "Portfolio of Ravi Teja, BTech CSE · App Builder · Automation Systems Developer",
+    "Portfolio of Bolla Ravi Teja, BTech CSE · App Builder · Automation Systems Developer",
 };
 
 export default function RootLayout({

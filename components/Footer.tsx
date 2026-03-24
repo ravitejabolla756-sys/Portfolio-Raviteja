@@ -73,7 +73,7 @@ export default function Footer() {
           <p>Thanks for visiting. Hope you liked it.</p>
           <p>
             Built by{" "}
-            <span className="text-[#00bfff] font-semibold">Ravi Teja</span> ·{" "}
+            <span className="text-[#00bfff] font-semibold">Bolla Ravi Teja</span> ·{" "}
             {new Date().getFullYear()}
           </p>
         </div>
