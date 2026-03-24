@@ -58,8 +58,8 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <a href="#" onClick={(e) => scrollTo(e, "hero")} className="text-xl font-semibold tracking-tight text-white hover:text-[#0ea5e9] transition-colors" data-hover>
-          Ravi Teja
+        <a href="#" onClick={(e) => scrollTo(e, "hero")} className="text-xl font-bold tracking-tighter text-white hover:text-[#0ea5e9] transition-colors" data-hover>
+          Bolla <span className="text-[#0ea5e9]">Ravi Teja</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
