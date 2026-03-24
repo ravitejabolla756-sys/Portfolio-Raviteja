@@ -38,10 +38,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-6 overflow-hidden">
-      {/* Bottom radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--accent-glow)_0,_transparent_65%)] opacity-20 pointer-events-none blur-3xl" />
-
+    <section id="contact" className="relative py-24 px-6 overflow-hidden bg-[#0b0b0b]">
       <div className="relative max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,34 +46,26 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
-            Contact <span className="text-accent glow-accent">Me</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            Contact <span className="text-[#ff7a00]">Me</span>
           </h2>
-          <p className="text-neutral-400 mb-2 font-mono text-sm tracking-tight">Initialize connection sequence.</p>
+          <p className="text-[#9a9a9a]/40 mb-2 font-mono text-sm tracking-tight text-center">Initialize connection sequence.</p>
           <a
             href="mailto:ravitejabolla756@gmail.com"
-            className="inline-block text-accent font-mono text-sm hover:underline drop-shadow-[0_0_8px_var(--accent-glow)] mt-1"
+            className="inline-block text-sm font-bold tracking-wide hover:underline mt-1 text-[#ff7a00]"
           >
             ✉ ravitejabolla756@gmail.com
           </a>
         </motion.div>
 
         <motion.form
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto bg-black/60 border border-accent/20 rounded-3xl p-8 md:p-10 backdrop-blur-md shadow-[0_0_50px_rgba(0,191,255,0.05)] relative"
+          className="max-w-2xl mx-auto bg-[#141414] border border-[rgba(255,255,255,0.08)] rounded-2xl p-8 md:p-10 relative"
         >
-          {/* Terminal dots */}
-          <div className="absolute top-5 left-5 flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-            <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
-          </div>
-
-          <div className="pt-5 space-y-5">
+          <div className="space-y-5">
             <div className="grid md:grid-cols-2 gap-5">
               <input
                 type="text"
@@ -85,7 +74,7 @@ export default function Contact() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full bg-black/70 border border-accent/40 rounded-lg px-4 py-3 text-white text-sm font-mono placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-accent/60 focus:border-transparent transition shadow-[inset_0_0_10px_rgba(0,191,255,0.06)]"
+                className="w-full bg-[#0b0b0b] border border-[rgba(255,255,255,0.08)] rounded-lg px-4 py-3 text-white text-sm font-mono placeholder:text-[#555] focus:outline-none focus:border-[#ff7a00] transition"
               />
               <input
                 type="email"
@@ -94,7 +83,7 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full bg-black/70 border border-accent/40 rounded-lg px-4 py-3 text-white text-sm font-mono placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-accent/60 focus:border-transparent transition shadow-[inset_0_0_10px_rgba(0,191,255,0.06)]"
+                className="w-full bg-[#0b0b0b] border border-[rgba(255,255,255,0.08)] rounded-lg px-4 py-3 text-white text-sm font-mono placeholder:text-[#555] focus:outline-none focus:border-[#ff7a00] transition"
               />
             </div>
 
@@ -105,30 +94,31 @@ export default function Contact() {
               value={form.message}
               onChange={handleChange}
               placeholder="> Type your message here..."
-              className="w-full bg-black/70 border border-accent/40 rounded-lg px-4 py-3 text-white text-sm font-mono placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-accent/60 focus:border-transparent transition resize-none shadow-[inset_0_0_10px_rgba(0,191,255,0.06)]"
+              className="w-full bg-[#0b0b0b] border border-[rgba(255,255,255,0.08)] rounded-lg px-4 py-3 text-white text-sm font-mono placeholder:text-[#555] focus:outline-none focus:border-[#ff7a00] transition resize-none"
             />
 
             <motion.button
               type="submit"
               disabled={status === "submitting" || status === "success"}
-              whileHover={{ scale: 1.02, boxShadow: "0 0 25px var(--accent-glow)" }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full py-4 rounded-xl bg-accent text-black font-bold font-mono text-sm tracking-widest uppercase flex items-center justify-center gap-3 shadow-[0_0_20px_var(--accent-glow)] disabled:opacity-70 disabled:cursor-not-allowed transition-all"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+              className={`w-full py-4 rounded-xl text-black font-extrabold font-mono text-sm tracking-widest uppercase flex items-center justify-center gap-3 disabled:opacity-70 transition-all ${
+                status === "success" ? "bg-emerald-500" : "bg-[#ff7a00]"
+              }`}
             >
               <AnimatePresence mode="wait">
                 {status === "idle" && (
-                  <motion.span key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <motion.span key="idle">
                     $ send_message.sh
                   </motion.span>
                 )}
                 {status === "submitting" && (
-                  <motion.span key="loading" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-2">
-                    <span className="w-4 h-4 rounded-full border-2 border-black/30 border-t-black animate-spin" />
+                  <motion.span key="loading" className="flex items-center gap-2">
                     Transmitting...
                   </motion.span>
                 )}
                 {status === "success" && (
-                  <motion.span key="success" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                  <motion.span key="success">
                     ✓ Packet Delivered [OK]
                   </motion.span>
                 )}

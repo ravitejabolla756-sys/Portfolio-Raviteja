@@ -1,25 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent: #00bfff;
-  --color-accent-glow: rgba(0, 191, 255, 0.4);
-  --color-bg: #000000;
+  /* Strict Palette Overrides */
+  --color-accent: #ff7a00;
+  --color-accent-soft: rgba(255, 122, 0, 0.12);
+  --color-bg: #0b0b0b;
+  --color-card: #141414;
   --color-text: #ffffff;
+  --color-muted: #9a9a9a;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Neutralize Blue/Cyan system-wide to prevent legacy "glows" */
+  --color-cyan-50: #0b0b0b; --color-cyan-100: #0b0b0b; --color-cyan-200: #0b0b0b;
+  --color-cyan-300: #0b0b0b; --color-cyan-400: #0b0b0b; --color-cyan-500: #0b0b0b;
+  --color-cyan-600: #0b0b0b; --color-cyan-700: #0b0b0b; --color-cyan-800: #0b0b0b;
+  --color-cyan-900: #0b0b0b;
+
+  --color-blue-50: #0b0b0b; --color-blue-100: #0b0b0b; --color-blue-200: #0b0b0b;
+  --color-blue-300: #0b0b0b; --color-blue-400: #0b0b0b; --color-blue-500: #0b0b0b;
+  --color-blue-600: #0b0b0b; --color-blue-700: #0b0b0b; --color-blue-800: #0b0b0b;
+  --color-blue-900: #0b0b0b;
 }
 
 @layer base {
   :root {
-    --accent: #00bfff;
-    --accent-glow: rgba(0, 191, 255, 0.4);
-    --bg: #000000;
+    --bg: #0b0b0b;
+    --card: #141414;
     --text: #ffffff;
-  }
-
-  .dark {
-    --bg: #000000;
-    --text: #ffffff;
-    --accent: #00bfff;
-    --accent-glow: rgba(0, 191, 255, 0.4);
+    --muted: #9a9a9a;
+    --accent: #ff7a00;
+    --accent-soft: rgba(255, 122, 0, 0.12);
+    --border: rgba(255, 255, 255, 0.08);
   }
 
   html {
@@ -28,7 +39,7 @@
   }
 
   body {
-    background-color: #000000;
+    background-color: var(--bg);
     color: var(--text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -37,65 +48,32 @@
     min-height: 100vh;
   }
 
-  /* Site-wide light line grid background */
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background-image: 
-      linear-gradient(to right, rgba(0, 191, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 191, 255, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
+  /* Clear any body pseudo-element vignettes */
+  body::before, body::after {
+    display: none !important;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text);
   }
 }
 
-/* Outline text stroke for hero names */
-.text-stroke {
-  -webkit-text-stroke: 1.5px var(--text);
-  color: transparent;
-  opacity: 0.8;
+/* Global Section Title Class */
+.section-title {
+  font-size: 3rem; /* 48px */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
 }
 
-.text-stroke-accent {
-  -webkit-text-stroke: 1.5px var(--accent);
-  color: transparent;
-}
-
-/* Scanline effect for terminal */
-.scanline {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    var(--accent-glow) 2px,
-    var(--accent-glow) 4px
-  );
-  opacity: 0.05;
-  pointer-events: none;
-}
-
-/* Glow text utility */
-.glow-accent {
-  text-shadow: 0 0 10px var(--accent), 0 0 20px rgba(0, 191, 255, 0.3);
-}
-
-/* Custom grid utility */
-.cyber-grid {
-  background-image: radial-gradient(circle, var(--accent) 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.08;
-}
-
-/* Animated glow orbs */
-@keyframes float {
-  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-  50% { transform: translateY(-20px) scale(1.1); opacity: 0.5; }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.section-title span {
+  color: #ff7a00;
 }
 
 /* Container limits */
@@ -105,4 +83,9 @@
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+/* Custom transitions */
+.transition-standard {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
