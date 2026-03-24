@@ -13,25 +13,25 @@ export default function Bavio() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/30 bg-accent/8 text-accent text-xs font-bold uppercase tracking-widest mb-6 shadow-[0_0_15px_var(--accent-glow)]">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
             Core System
           </span>
-          <h2 className="text-4xl md:text-6xl font-bold text-[var(--text)] mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
             Bavio<span className="text-accent glow-accent">.in</span>
           </h2>
-          <p className="text-slate-600 dark:text-neutral-300 text-base md:text-lg leading-relaxed mb-10">
+          <p className="text-neutral-300 text-base md:text-lg leading-relaxed mb-10">
             Automation-first business platform for managing communication, workflows, and operations using virtual numbers and AI-driven systems.
           </p>
 
           <dl className="space-y-5">
             {[
               { label: "Focus", value: "SaaS + Automation + Communication Infrastructure", color: "text-accent" },
-              { label: "Tech", value: "Web APIs, n8n Automation, Flutter, Firebase", color: "text-slate-700 dark:text-neutral-200" },
-              { label: "Status", value: "Under Development", color: "text-amber-600 dark:text-amber-400" },
+              { label: "Tech", value: "Web APIs, n8n Automation, Flutter, Firebase", color: "text-neutral-200" },
+              { label: "Status", value: "Under Development", color: "text-amber-400" },
             ].map((item) => (
-              <div key={item.label} className="flex gap-4 bg-slate-50 dark:bg-black/30 border-l-2 border-accent/40 pl-5 py-3 rounded-r-xl border border-slate-200 dark:border-white/5">
-                <dt className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-neutral-500 w-16 shrink-0 pt-0.5">{item.label}</dt>
+              <div key={item.label} className="flex gap-4 bg-black/30 border-l-2 border-accent/40 pl-5 py-3 rounded-r-xl">
+                <dt className="text-xs font-semibold uppercase tracking-widest text-neutral-500 w-16 shrink-0 pt-0.5">{item.label}</dt>
                 <dd className={`text-sm font-medium ${item.color}`}>{item.value}</dd>
               </div>
             ))}
@@ -47,13 +47,13 @@ export default function Bavio() {
         >
           <motion.div
             whileHover={{ scale: 1.02, boxShadow: "0 0 50px var(--accent-glow)" }}
-            className="rounded-3xl bg-white dark:bg-black/60 border border-slate-200 dark:border-accent/30 p-8 md:p-10 shadow-xl dark:shadow-[0_0_30px_rgba(249,115,22,0.1)] relative overflow-hidden group"
+            className="rounded-3xl bg-black/60 border border-accent/30 p-8 md:p-10 shadow-[0_0_30px_rgba(0,191,255,0.1)] relative overflow-hidden group"
           >
             {/* Top glow line */}
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
             <div className="absolute -right-32 -top-32 w-80 h-80 bg-accent rounded-full blur-[120px] opacity-5 group-hover:opacity-15 transition-opacity duration-700" />
 
-            <h3 className="text-lg font-bold text-[var(--text)] mb-8 flex items-center gap-3 font-mono">
+            <h3 className="text-lg font-bold text-white mb-8 flex items-center gap-3 font-mono">
               <span className="text-accent">$</span> system_architecture.sh
             </h3>
 
@@ -76,12 +76,12 @@ export default function Bavio() {
                 },
               ].map((item, i) => (
                 <li key={i} className="flex gap-5">
-                  <div className="w-11 h-11 shrink-0 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-white/10 flex items-center justify-center text-accent text-xl group-hover:border-accent/50 transition-colors">
+                  <div className="w-11 h-11 shrink-0 rounded-xl bg-black border border-white/10 flex items-center justify-center text-accent text-xl group-hover:border-accent/50 transition-colors">
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="text-[var(--text)] font-semibold text-base mb-1">{item.title}</h4>
-                    <p className="text-slate-500 dark:text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
+                    <h4 className="text-white font-semibold text-base mb-1">{item.title}</h4>
+                    <p className="text-neutral-400 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </li>
               ))}

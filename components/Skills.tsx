@@ -43,7 +43,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 relative overflow-hidden">
       {/* Animated dots mesh background (top-right) */}
-      <div className="absolute right-0 top-12 md:right-16 pointer-events-none z-0 opacity-20 dark:opacity-30">
+      <div className="absolute right-0 top-12 md:right-16 pointer-events-none z-0 opacity-20">
         <motion.div
           className="grid grid-cols-10 gap-3"
           animate={{ y: [0, -12, 0] }}
@@ -66,7 +66,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-[var(--text)]">
+          <h2 className="text-3xl md:text-5xl font-bold text-white">
             Technical <span className="text-accent glow-accent">Stack</span>
           </h2>
         </motion.div>
@@ -80,7 +80,7 @@ export default function Skills() {
               className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-all border ${
                 activeTab === tab
                   ? "bg-accent text-white border-accent shadow-[0_0_20px_var(--accent-glow)] font-bold"
-                  : "bg-transparent text-slate-500 dark:text-neutral-400 border-slate-200 dark:border-white/15 hover:border-accent/50 hover:text-accent"
+                  : "bg-transparent text-neutral-400 border-white/10 hover:border-accent/50 hover:text-white"
               }`}
             >
               {tab}
@@ -109,10 +109,10 @@ export default function Skills() {
                   borderColor: "var(--accent)",
                   boxShadow: "0 0 25px var(--accent-glow)",
                 }}
-                className="p-6 rounded-2xl bg-white/50 dark:bg-black/50 border border-slate-200 dark:border-white/8 backdrop-blur-sm flex items-center gap-4 group cursor-default transition-all"
+                className="p-6 rounded-2xl bg-white/5 dark:bg-black/50 border border-white/10 backdrop-blur-sm flex items-center gap-4 group cursor-default transition-all"
               >
-                <div className="w-2 h-2 rounded-sm bg-slate-200 dark:bg-white/20 group-hover:bg-accent group-hover:shadow-[0_0_10px_var(--accent)] transition-all" />
-                <span className="text-slate-700 dark:text-neutral-200 font-medium group-hover:text-accent transition-colors text-sm sm:text-base">
+                <div className="w-2 h-2 rounded-sm bg-white/20 group-hover:bg-accent group-hover:shadow-[0_0_10px_var(--accent)] transition-all" />
+                <span className="text-neutral-200 font-medium group-hover:text-white transition-colors">
                   {skill}
                 </span>
               </motion.div>

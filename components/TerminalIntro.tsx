@@ -57,14 +57,14 @@ export default function TerminalIntro() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#1a0b02_0,_#000_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_#0a1628_0,_#000_60%)]" />
           <div className="relative h-full w-full px-6 md:px-16 py-10 md:py-16 flex flex-col justify-start overflow-hidden">
             {/* Terminal header bar */}
             <div className="flex items-center gap-2 mb-8">
               <div className="w-3 h-3 rounded-full bg-red-500 opacity-80" />
               <div className="w-3 h-3 rounded-full bg-yellow-500 opacity-80" />
               <div className="w-3 h-3 rounded-full bg-green-500 opacity-80" />
-              <span className="ml-3 text-accent/40 text-xs">terminal — portfolio_system v2.0</span>
+              <span className="ml-3 text-accent/40 text-xs text-mono uppercase tracking-tighter">terminal — portfolio_system v4.0</span>
             </div>
 
             <div className="max-w-3xl text-xs md:text-sm space-y-1">
